@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap css -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./images/logo1.png">
+<title>AKG Medical System</title>
+<style>
+  body {
+    margin: 140px 0px 0px 0px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fcb69f;
+  }
+
+  /* /// changes //  */
+
+  @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    /* --pink: #e5345b; */
+     --pink: #fcb69f;
+   
+}
+
+/* body {
+    font-family: var(--sm-font);
+    --pink: #fcb69f;
+} */
+
+.wpx {
+  max-width: 400px;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+/* button */
+.bg-primary {
+    background-color: var(--pink) !important;
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(218, 66, 29);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button):hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+.btn i {
+ color: white;
+}
+
+
+
+/* text color */
+.text-primary {
+    color: var(--pink) !important;
+}
+
+/* navbar */
+.navbar {
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffecd2; */
+    background-color: #0a0619;
+}
+
+
+/*   custom style to hide the navbar */
+
+
+   .navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.navbar-brand img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.navbar-brand span {
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+
+.blinking-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    animation: blink 1s infinite alternate;
+    
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.6;
+    }
+  }
+
+
+.nav-link:hover {
+    font: bold;
+    color: var(--pink) !important;
+    background-color: rgb(57, 214, 241);
+    border-radius: 10px;
+}
+
+.nav-item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+
+
+/* media queries */
+@media(min-width: 992px) {
+    .nav-item {
+        border-bottom: none;
+    }
+}
+  /* /// Till changes ///  */
+
+  .container1 {
+    background-color: black;
+    border-top: solid white;
+    border: solid white;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    width: 95%;
+    max-width: 1250px;
+    overflow: hidden;
+  }
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    /* border-radius: 15px; */
+    /* border: solid white; */
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align images at center along y-axis */
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    /* background-color: red; */
+  }
+
+  .carousel img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    margin: 10px;
+    border-radius: 15px;
+    /* border: solid white; */
+  }
+
+  .sImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align images at center along y-axis */
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+  }
+
+  .sImage img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    /* object-fit: contain;  */
+    margin: 10px;
+    border-radius: 15px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+
+  .detail-section {
+    flex: 1;
+    margin-bottom: 20px;
+    margin-inline: 10px;
+  }
+
+  .detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .logoImg {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .container1 h1 {
+    color: #fff;
+    margin: 5px 10px;
+    border-bottom: solid white;
+    text-align: center;
+  }
+
+  /* whatsapp-icon start */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+   
+}
+
+.whatsapp-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+/* whatsapp-icon end */
+
+
+  /* Media Queries */
+  @media screen and (min-width: 1028px) {
+    .carousel-container {
+      flex-direction: row;
+    }
+    .carousel {
+      flex-direction: column;
+      flex: 1;
+    }
+    .details {
+      padding: 20px 40px;
+      flex: 2;
+      margin-left: 20px;
+    }
+    .detail-row {
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .container1 {
+      width: 90%;
+    }
+    .carousel {
+      flex-direction: column;
+      flex: 1;
+    }
+    .details {
+      padding: 20px 40px;
+      flex: 2;
+      margin-left: 20px;
+    }
+    .detail-row {
+      flex-direction: row;
+    }
+    .logoImg {
+      width: 70px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .container1 {
+      width: 100%; /* Full width on smaller screens */
+    }
+    .carousel img {
+      margin: 10px; /* Adjusted margin for smaller screens */
+    }
+    .details {
+      margin-top: 20px;
+    }
+    .detail-section {
+      margin-right: 0; /* Reset margin for smaller screens */
+    }
+    .logoImg {
+      width: 70px;
+    }
+  }
+</style>
+</head>
+<body>
+
+
+    <!-- header  -->
+    <!-- navbar -->
+
+  <nav
+      class="navbar navbar-expand-lg navbar-light py-1 fixed-top"
+      id="scrollNavbar"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
+          href="index.html"
+        >
+          <img src="./images/logo4.jpeg" alt="site icon" />
+          <span class="text-uppercase fw-lighter ms-2"></span>
+        </a>
+
+        <!-- <div class="order-lg-2 nav-btns">
+          <button type="button" class="btn position-relative">
+            <i class="fa fa-search"></i>
+          </button>
+        </div> -->
+
+        <button
+          class="navbar-toggler border-0 bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+          <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item px-2 py-2">
+              <a
+                class="nav-link text-uppercase text-white"
+                href="index.html"
+                >home</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2">
+              <a class="nav-link text-uppercase text-white" href="#products"
+                >products</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2">
+              <a class="nav-link text-uppercase text-white" href="#clientle"
+                >clientle</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2 active">
+              <a
+                class="nav-link text-uppercase text-white"
+                href="team.html"
+                >about us</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2 border-0">
+              <a class="nav-link text-uppercase text-white" href="contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="whatsapp-icon">
+      <a href="https://api.whatsapp.com/send?phone=918006408747" target="_blank">
+          <img src="./images/wp.png" alt="WhatsApp Icon">
+      </a>
+  </div>
+
+
+<div class="container1">
+  <h1>Infant Radiant Warmer</h1>
+  <div class="carousel-container">
+    <div class="sImage">
+      <img src="./images/Infant-Radiant-Warmer-prd-1.jpg" alt="Image 1">
+    </div>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Product features</p>
+            <ul class="details-list">
+                <li>Microprocessor-controlled system with self-check</li>
+                <li>Skin/Manual control options</li>
+                <li>Digital display for Baby Temperature</li>
+                <li>Manual/Servo modes for flexibility</li>
+                <li>Spacious baby bed with drop-down sides</li>
+                <li>Integrated alarm system for:
+                    <ul>
+                        <li>Probe Fail</li>
+                        <li>Skin High/Low</li>
+                        <li>Power Fail</li>
+                        <li>Manual Mode with 50% heat lock</li>
+                    </ul>
+                </li>
+                <li>Heater Assembly with radiant heater, reflector, and examination lamp</li>
+                <li>Swiveling heater assembly for directional adjustment</li>
+                <li>2" high-quality castors with brakes</li>
+            </ul>
+        </div>
+        <div class="detail-section">
+            <p class="product-description">Specification</p>
+            <ul class="details-list">
+                <li>Height: 1920mm</li>
+                <li>Length: 890mm</li>
+                <li>Width: 860mm</li>
+                <li>Power Supply: 220V/50Hz</li>
+                <li>Heater Power: 650 Watts</li>
+                <li>Fuse: 5 Amp</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container1">
+  <h1>Baby Incubator</h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/Baby-Incubator-1.jpg" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+              <p class="product-description">Control and Display</p>
+              <ul>
+                <li>Operated by advanced microcomputer technology</li>
+                <li>Three digital displays for Set Temperature, Air Temperature, and Skin Temperature</li>
+                <li>Two function control modes for flexibility</li>
+                <li>Larger Skin Temperature display with Celsius/Fahrenheit conversion</li>
+                <li>LCD for specific information and heater power visualization</li>
+              </ul>
+
+              <p class="product-description">Convenience and Mobility</p>
+              <ul class="detail-section">
+                <li>Removable heater and control unit for easy cleaning and servicing</li>
+                <li>Designed acrylic hood for full visibility and accessibility</li>
+                <li>Unit rests on four large castors with brakes</li>
+                <li>Optional features: Oxygen Delivery System, Electric Slow Suction, CFL Phototherapy</li>
+            
+              </ul>
+          </div>
+
+          <div class="detail-section">
+            <p class="product-description">Safety and alarm</p>
+            <ul>
+                <li>Comprehensive alarm system with audible and visual indicators for Probe Failure, Power Failure, High Temperature, and Low Temperature</li>
+                <li>Adjustable High and Low Temperature alarm settings</li>
+                <li>Humidification provided with two water trays</li>
+                <li>Three side trays for consumables storage</li>
+            </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- OCS  -->
+<div class="container1">
+  <h1>Open Care System</h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/Open-Care-System-prd-2.jpg" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+                <p class="product-description">Control Panel and System Features:</p>
+                <ul>
+                  <li>Skin temperature display can be converted from °C to °F with a button</li>
+                  <li>Big LCD for information and visualizations of heater power in manual and servo modes</li>
+                  <li>Full panel of alarms with audible and visual indicators for various conditions</li>
+                </ul>
+
+                <p class="product-description">Manual Mode and Baby Bed:</p>
+                <ul>
+                <li>Adjustable heating from 40% to 100% in manual mode</li>
+                <li>Automatic switch from servo to manual mode</li>
+                <li>Spacious baby bed with easy drop-down/fold-down glasses</li>
+                <li>Optional X-Ray facility below the baby bed</li>
+                </ul>
+          </div>
+
+          <div class="detail-section">
+            <p class="product-description">Technical Specifications and Additional Features:</p>
+            <ul>
+              <li>Dimensions: 1850mm (H) x 1050mm (L) x 650mm (W)</li>
+              <li>Power Supply: 220V/50Hz</li>
+              <li>Heater Power: 650 Watts</li>
+              <li>Fuse: 5 Amp</li>
+              <li>Air sensor</li>
+              <li>Switches OFF the heater if AIR temperature goes above 39°C</li>
+              <li>User-programmable features, Timer, and Check Baby Alarm</li>
+            </ul>
+      
+            <p class="product-description">Heater Assembly and Lighting:</p>
+            <ul>
+              <li>Integral examination light</li>
+              <li>650 watts heating system (Silica/quartz/Ceramic Heater)</li>
+              <li>Swivels for X-rays and procedures</li>
+              <li>Equipped with LED Phototherapy on both sides</li>
+            </ul>      
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Bubble cpap  -->
+<div class="container1">
+    <h1>Bubble CPAP Restohealth-03</h1>
+    <div class="carousel-container">
+        <div class="sImage">
+          <img src="./images/Bubble-CPAP.jpg" alt="Image 1">
+        </div>
+        <div class="details">
+          <div class="detail-row">
+            <div class="detail-section">
+                <p class="product-description">Additional Features:</p>
+                <ul>
+                    <li>Inbuilt Air-oxygen blender.</li>
+                    <li>Compact, easy to carry with built-in handle on the top.</li>
+                    <li>Can be used as transport CPAP, if attached to power-supply and oxygen.</li>
+                    <li>New concept free built-in air compressor easy BUBBLE CPAP.</li>
+                    <li>Low power design for spontaneous breathing of newborns and children, to provide continuous positive pressure ventilation support.</li>
+                    <li>Small size, low noise, maintenance-free for NICU, transport, pediatric ward, and other different places.</li>
+                </ul>
+
+
+                <p class="product-description">Product Superiority:</p>
+                <ul>
+                    <li>Able to give the baby a safe and controllable oxygen concentration.</li>
+                    <li>It is possible to effectively maintain the functional residual capacity.</li>
+                    <li>Can help reduce the breathing done by the baby.</li>
+                    <li>Can reduce the need for invasive mechanical ventilation.</li>
+                    <li>Able to give the baby a better wet gas.</li>
+                    <li>Can significantly reduce the incidence of chronic pneumonia (CLD).</li>
+                    <li>Can improve some of the lung physiological indicators, such as height, weight, and so on.</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <p class="product-description">CPAP Pressure Generator:</p>
+                <ul>
+                    <li>With the CPAP pressure bar, it is easy to set the shock pressure from 3 to 250px water column.</li>
+                    <li>Automatic water level adjustment mechanism to ensure constant CPAP pressure levels.</li>
+                    <li>Removable water tank can keep the CPAP from being interrupted.</li>
+                </ul>
+                
+                <p class="product-description">Technical Specifications:</p>
+                <ul>
+                    <li>Ventilation mode (MODE): CPAP (BUBBLE CPAP) mode.</li>
+                    <li>The scope of application: Applicable to spontaneous breathing of the newborn, to provide continuous positive pressure ventilation support.</li>
+                    <li>Flow regulation LPM: 0 LPM-10 LPM (Varies in different Air-Oxygen blender).</li>
+                    <li>Oxygen concentration O2%: 21% - 100%.</li>
+                    <li>CPAP pressure: 300 Pa – 1000 Pa (3 cm H2O – 10 cm H2O).</li>
+                    <li>Pressure warning: Sound alarm (Pneumatic alarm).</li>
+                    <li>Indicator light: On indicates that the device is in operation.</li>
+                    <li>Working noise: Not more than 55dB (A).</li>
+                    <li>Gas input: Medical oxygen 0.3MPa-0.4MPa.</li>
+                    <li>Power supply: AC 220V ± 22V, 50Hz ± 1Hz.</li>
+                </ul>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<!-- Bistors BT 250  -->
+<div class="container1">
+  <h1>Sunshine Phototherapy Unit</h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/photoTherepy.jpg" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+
+            <div class="detail-section">
+                <p class="product-description">Parameters:</p>
+                <ul>
+                    <li>LED: 9-12 hi-power blue LEDs (white LED optional)</li>
+                    <li>Irradiance: >42 mw/cm2/nm at 30cm</li>
+                    <li>Light source lifetime: minimum 25,000 hrs.</li>
+                    <li>Wavelength: 420-480 nm</li>
+                    <li>Effective area: 50 cm X 30 cm</li>
+                    <li>Electrical input voltage: 100-240 V, 50-60Hz</li>
+                </ul>
+                 
+                <p class="product-description">Dimensions:</p>
+                <ul>
+                    <li>Front: 18” (L) x 8.5” (W) x 3” (H)</li>
+                    <li>Height (adjustable): Min: 1230 mm, Max: 1600 mm</li>
+                    <li>Length: 800 mm</li>
+                    <li>Width: 720 mm</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <p class="product-description">Baby Bassinet Features:</p>
+                <ul>
+                    <li>Clear collapsible fold-down side panels</li>
+                    <li>Baby tray with transparent base for undersurface Phototherapy</li>
+                    <li>Lower shelf and movable castors</li>
+                    <li>Offers undersurface LED Phototherapy and serves as a Double Surface Phototherapy Unit</li>
+                </ul>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container1">
+    <h1>Baby Bassinet</h1>
+    <div class="carousel-container">
+        <div class="sImage">
+            <img class="wpx" src="./images/Baby-Bassinet1.jpg" alt="baby_bassinet">
+        </div>
+
+        <div class="details">
+            <p class="product-description">
+
+              Our cutting-edge baby bassinets are purposefully crafted to meet the unique demands of newborn care. Designed to provide unparalleled safety and comfort, these bassinets are constructed with high-quality stainless steel, ensuring optimal stability. Each unit undergoes rigorous quality checks to align with international standards.
+              <br><br>
+              Our commitment to user-friendliness is evident in the intuitive design, incorporating scientifically proven techniques for the best neonatal care. These bassinets feature advanced functionalities, guaranteeing a secure environment for infants. Crucially, they are meticulously engineered with no sharp edges, prioritizing infant safety.
+              <br><br>
+              With decades of experience, we take pride in offering healthcare organizations top-notch baby bassinets, assuring parents that their precious newborns are in the safest of hands.
+            </p>
+        </div>
+    </div>
+</div>
+  
+  <!-- footer -->
+  <footer class="bg-dark py-4">
+    <div class="container-fluid">
+        <div class="row text-white g-4">
+            <div class="col-md-6 col-lg-3">
+                <a class="text-uppercase text-decoration-none brand text-white" href="index.html">AKG MEDICAL
+                    SYSYTEM</a>
+                <p class="text-white text-muted mt-3">Established in 2022, AKG Medical Systems is a leading provider
+                    of cutting-edge medical equipment and solutions, dedicated to revolutionizing the healthcare
+                    landscape. With a strong foundation of expertise and experience, our company has quickly emerged
+                    as a trusted name in the industry, driven by the visionary leadership of Mr. A.K. Aggarwal.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light">Links</h5>
+                <ul class="list-unstyled">
+                    <li class="my-3">
+                        <a href="index.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="#collection" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Products
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="team.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> About Us
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="contact.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light mb-3">Contact Us</h5>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </span>
+                    <span class="fw-light">
+                        Lucknow
+                    </span>
+                </div>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="fw-light">
+                        query@akgmedicalsystem.cloud
+                    </span>
+                </div>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span class="fw-light">
+                        8006408747
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light mb-3">Follow Us</h5>
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-linkedin"></i>
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/jquery-3.6.0.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- isotope js -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+  function initializeCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const images = carousel.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach(img => img.style.display = 'none');
+      images[index].style.display = 'block';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+    setInterval(nextImage, 3000); // Change image every 3 seconds
+  }
+
+  initializeCarousel('carousel1');
+  initializeCarousel('carousel2');
+  initializeCarousel('carousel3');
+  initializeCarousel('carousel4');
+
+  var $grid = $('.collection-list').isotope({
+    // options
+  });
+  // filter items on button click
+  $('.filter-button-group').on( 'click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    resetFilterBtns();
+    $(this).addClass('active-filter-btn');
+    $grid.isotope({ filter: filterValue });
+  });
+  
+  var filterBtns = $('.filter-button-group').find('button');
+  function resetFilterBtns(){
+    filterBtns.each(function(){
+      $(this).removeClass('active-filter-btn');
+    });
+  }
+</script>
+</body>
+</html>

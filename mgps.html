@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./public/styles/temp.css">
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!--  bootstrap  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+            <link rel="icon" type="image/x-icon" href="./images/logo1.png">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    /* --pink: #e5345b; */
+     --pink: #fcb69f;
+   
+}
+
+/* body {
+    font-family: var(--sm-font);
+    --pink: #fcb69f;
+} */
+
+
+/* button */
+.bg-primary {
+    background-color: var(--pink) !important;
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(218, 66, 29);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button):hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+.btn i {
+ color: white;
+}
+
+
+
+/* text color */
+.text-primary {
+    color: var(--pink) !important;
+}
+
+/* navbar */
+.navbar {
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffecd2; */
+    background-color: #0a0619;
+}
+
+
+/*   custom style to hide the navbar */
+
+
+   .navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.navbar-brand img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.navbar-brand span {
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+
+
+.nav-link:hover {
+    font: bold;
+    color: var(--pink) !important;
+    background-color: rgb(57, 214, 241);
+    border-radius: 10px;
+}
+
+.nav-item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+
+
+/* media queries */
+@media(min-width: 992px) {
+    .nav-item {
+        border-bottom: none;
+    }
+}
+
+</style>
+    </head>
+
+    <body>
+        <nav
+        class="navbar navbar-expand-lg navbar-light py-1 fixed-top"
+        id="scrollNavbar"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
+            href="index.html"
+          >
+            <img src="./images/logo4.jpeg" alt="site icon" />
+            <span class="text-uppercase fw-lighter ms-2"></span>
+          </a>
+  
+          <!-- <div class="order-lg-2 nav-btns">
+            <button type="button" class="btn position-relative">
+              <i class="fa fa-search"></i>
+            </button>
+          </div> -->
+  
+          <button
+            class="navbar-toggler border-0 bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+            <ul class="navbar-nav mx-auto text-center">
+              <li class="nav-item px-2 py-2">
+                <a
+                  class="nav-link text-uppercase text-white"
+                  href="index.html"
+                  >home</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2">
+                <a class="nav-link text-uppercase text-white" href="#collection"
+                  >products</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2">
+                <a class="nav-link text-uppercase text-white" href="#clientle"
+                  >clientle</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2 active">
+                <a
+                  class="nav-link text-uppercase text-white"
+                  href="team.html"
+                  >about us</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2 border-0">
+                <a class="nav-link text-uppercase text-white" href="contact.html"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="whatsapp-icon">
+        <a href="https://api.whatsapp.com/send?phone=918006408747" target="_blank">
+            <img src="./images/wp.png" alt="WhatsApp Icon">
+        </a>
+    </div>
+
+
+<section class="margin-header">
+            <!----------------------------------- HEADER  ------------------------------------->
+            <section>
+                <div class="heading top-heading tab-top-heading mt-3">
+                    <span>MEDICAL GAS PIPELINE SYSTEM</span>
+                </div>
+            </section>
+
+            <section>
+                <div class="header-container">
+
+
+                        <p class="title">WHY MGPS</p>
+                        <img src="images/medical-gas-pipe-line.jpg" alt="">
+                        <p class="para">The medical gas pipeline system is such a
+                            crucial part of every hospital MGPS manufacturer and supplier
+                            are looked for when hospitals need MGPS.At AKG we understand
+                            the importance of MGPS as it circulates vital medical gases.
+                            These gases are required for several clinical applications
+                            and ventilation.
+                        </p>
+
+
+                </div>
+            </section>
+
+
+            <!----------------     COMPONENT TITLE BUTTONS ---------------->
+            <section>
+                <div id="collection" class="component-wrapper">
+
+
+
+                    <div class="component-grid">
+                        <a href="#component1">Medical Gas Pipeline</a>
+                        <a href="#component2">Shutoff Value</a>
+                        <a href="#component3">Monitoring and Alarm System</a>
+                        <a href="#component4">Terminal Gas Outlets</a>
+                        <a href="#component5">Gas Manifold</a>
+                        <a href="#component6">Bedhead Panel</a>
+                        <a href="#component7">Regulators/Control Panels</a>
+                        <a href="#component8">Vaccum System</a>
+                        <a href="#component9">Ward/Theatre Vaccum Terminal Unit</a>
+                        <a href="#component10">Medical Air 4 & 7</a>
+                        <a href="#component11">Carbon Dioxide Manifold</a>
+                        <a href="#component12">Medical Nitrous Oxide</a>
+                        <a href="#component13">Nitrous Oxide Manifold</a>
+                        <a href="#component14">Track Curtain System</a>
+                        <a href="#component15">Nurse Call Systems</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="component-main-container">
+                <div id="component1" class="component-content-wrapper">
+                    <h2>MEDICAL OXYGEN MANIFOLD SYSTEM</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.26.49.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">A pipeline system that includes</p>
+                            <P class="para"> The pipeline Network</p>
+                            <p class="para">The control unit</p>
+                            <p class="para">The pipe material used in MGPS copper seamless tubes </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="component2" class="component-content-wrapper">
+                    <h2>SHUTOFF VALUE</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.27.00.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Shutoff value system is used on each floor of the hospital
+                                or on the entrance of the gas port of the operation room</p>
+                            <P class="para"> It has two functions</p>
+                            <p class="para">To reduce gas pressure</p>
+                            <p class="para">To shutoff gas pipes </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component3" class="component-content-wrapper">
+                    <h2>MONITORING AND ALARM SYSTEM</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.27.22.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">The system always monitors the remains of medical gas,
+                                troubles of machines and abnormalities in pressure in a lump to
+                                perfectly operate equipment which directly link to life.
+                            </p>
+                            <p class="para"> <span>Area Alarm</span> : Monitor pipeline pressure within a ward,OT etc
+                            </p>
+                            <p class="para"><span>Master Alarm</span> : Provides continuous monitoring of medical gas
+                                installations across hospitals.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="component4" class="component-content-wrapper">
+                    <h2>TERMINAL GAS OUTLETS</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.27.31.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+
+                        <div class="para-wrapper">
+                            <p class="para">These Terminal gas outlets are color-coded, labelled with gas
+                                name and have self-sealing sockets.
+                            </p>
+                            <P class="para"> <span>Gas Specificity</span> : The Terminal unit shall only accept the
+                                probe for the gas for which it is intende.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component5" class="component-content-wrapper">
+                    <h2>GAS MANIFOLD</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.28.02.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Gas Manifold is designed to supply the pipeline system with
+                                sufficient quantity of gas by cylinders and / or tanks.
+                            </p>
+                            <P class="para">The typical manifold for medical gases usually consists of
+                                a two-sided cylinder supply with automatic changeover betwwen the empty and
+                                full side and an additional third source for emergency supply.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component6" class="component-content-wrapper">
+                    <h2>BEDHEAD PANEL</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.28.16.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">BedHead panels mainly used in hospital wards, can
+                                be loaded gas outlets, power switches and sockets and other equipment. </p>
+                            <P class="para">It is an essential gas outlet control devices for central oxygen supply
+                                and central attraction system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component7" class="component-content-wrapper">
+                    <h2>REGULATORS</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.28.26.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Regulators are also known as Control Panels. </p>
+                            <P class="para">Medical gas regulators are technologically advanced medical
+                                pressure adjusters which are designed to deliver life-saving and highly
+                                important medical gases from one central location in an efficient manner
+                                ultimately reducing facility costs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component8" class="component-content-wrapper">
+                    <h2>VACCUM SYSTEM</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.29.26.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+
+                        <div class="para-wrapper">
+                            <p class="para"><span> Vaccum Pumps</span> : Reciprocating </p>
+                            <P class="para"><span>Tanks</span> : Vaccum receiver according to the capacity.</P>
+                            <p class="para">Electric motor</p>
+                            <p class="para">Starter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component9" class="component-content-wrapper">
+                    <h2>WARD/THEATRE VACCUM TERMINAL UNIT</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.30.11.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Ward vaccum unit is equipped with a regulator.</p>
+                            <P class="para">The vaccum bottle is available in various sizes from 250ml to 2 Liters.</P>
+                            <p class="para">Based on the usage bottle size may vary for example
+                                OT needs larger bottle size.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component10" class="component-content-wrapper">
+                    <h2>MEDICAL AIR 4 AND 7</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.30.38.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Medical Air is mostly used in various hospital
+                                equipments such as Autoclaves,Ventilators etc.
+                            </p>
+                            <P class="para">It is considered as manufactured drug on-site
+                                delivered at a pressure of 370-400 kpa.</P>
+                            <p class="para">Flow rate of MA4 is calculated to be 40 & 80 LPM
+                                per point for OT and ICU respectively.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component11" class="component-content-wrapper">
+                    <h2>CARBON DIOXIDE MANIFOLD</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.30.49.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Primary supply will be two banks of minimum 2 number of D Type.</p>
+                            <P class="para">No secondary bank required.</P>
+                            <p class="para">Automatic change over panel with heater.</p>
+                            <p class="para">Emergency reserve supply for example Cylinders in OT.</p>
+                            <p class="para">All piping and Installation work will be as discussed above.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component12" class="component-content-wrapper">
+                    <h2>MEDICAL NITOUS OXIDE</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.31.00.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Nitrous Oxide is used for anaesthetic and analgestic purposes.</p>
+                            <P class="para">Provided only in the Operating Rooms in this MGPS Installation.</P>
+                            <p class="para">Positioned in a shaded area, away from direct sunlight or
+                                source of heat.</p>
+                            <p class="para">Nominal distribution pressure to be considered as 410 kpa.</p>
+                            <p class="para">Design Flow rate is 15 Litres per minute.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component13" class="component-content-wrapper">
+                    <h2>NITOUS OXIDE MANIFOLD</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.31.00.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Primary supply will be two banks of minimum 4 number of D Type.</p>
+                            <P class="para">Secondary supply will be two banks of minimum 2 number of D Type,
+                                N2O Gas Cylinders.</P>
+                            <p class="para">Automatic change over panel with heater.</p>
+                            <p class="para">Emergency reserve supply for example small cylinders in the OT.</p>
+                            <p class="para">All piping and Installation work will be as discussed above.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component14" class="component-content-wrapper">
+                    <h2>TRACK CURTAIN SYSTEM</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.31.09.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">Providers privacy to the patients.</p>
+                            <p class="para">Stain free fabric.</p>
+                            <p class="para">Easy to use operation.</p>
+                            <p class="para">High quality aluminium tracks.</p>
+                            <p class="para">Superior netting fabric.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="component15" class="component-content-wrapper">
+                    <h2>NURSE CALL SYSTEMS</h2>
+                    <div class="component-content">
+                        <div class="component-content-img">
+
+                            <img src="images/WhatsApp Image 2023-08-23 at 19.31.17.jpg" alt="">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+
+                        <div class="para-wrapper">
+                            <p class="para">We are pioneers in Nurse Call Systems and recognized
+                                as leading providers in India. Our Nurse Call System is accepted
+                                widely for its reliability and performance which encouraged us
+                                to develop several other products in the field of healthcare.</p>
+                            <p class="para">Implemented in majority of hospitals across India.</p>
+                            <p class="para">Room number display tailor made to customer requirements.</p>
+                            <p class="para">Cost effective , compact and highly reliable.</p>
+                            <p class="para">Maintenance free.</p>
+                            <p class="para">Both wired and wireless system available.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <!--------------------- FOOTER   ---------------------------->
+            <footer class="py-5">
+                <div class="container">
+                    <div class="row text-white g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <a class="text-uppercase text-decoration-none brand text-white" href="index.html">AKG
+                                MEDICAL
+                                SYSYTEM</a>
+                            <p class="text-white text-muted mt-3">Established in 2022, AKG Medical Systems is a leading
+                                provider
+                                of cutting-edge medical equipment and solutions, dedicated to revolutionizing the
+                                healthcare
+                                landscape. With a strong foundation of expertise and experience, our company has quickly
+                                emerged
+                                as a trusted name in the industry, driven by the visionary leadership of Mr. A.K.
+                                Aggarwal.</p>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <h5 class="fw-light">Links</h5>
+                            <ul class="list-unstyled">
+                                <li class="my-3">
+                                    <a href="index.html" class="text-white text-decoration-none text-muted">
+                                        <i class="fas fa-chevron-right me-1"></i> Home
+                                    </a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="#collection" class="text-white text-decoration-none text-muted">
+                                        <i class="fas fa-chevron-right me-1"></i> Products
+                                    </a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="team.html" class="text-white text-decoration-none text-muted">
+                                        <i class="fas fa-chevron-right me-1"></i> About Us
+                                    </a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="contact.html" class="text-white text-decoration-none text-muted">
+                                        <i class="fas fa-chevron-right me-1"></i> Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <h5 class="fw-light mb-3">Contact Us</h5>
+                            <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                                <span class="me-3">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </span>
+                                <span class="fw-light">
+                                    Lucknow
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                                <span class="me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="fw-light">
+                                    query@akgmedicalsystem.cloud
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                                <span class="me-3">
+                                    <i class="fas fa-phone-alt"></i>
+                                </span>
+                                <span class="fw-light">
+                                    8006408747
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <h5 class="fw-light mb-3">Follow Us</h5>
+                            <div>
+                                <ul class="list-unstyled d-flex">
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                            <i class="fab fa-linkedin"></i>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap css -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./images/logo1.png">
+<title>AKG Medical System</title>
+<style>
+  body {
+    margin: 140px 0px 0px 0px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fcb69f;
+  }
+
+  /* /// changes //  */
+
+  @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    /* --pink: #e5345b; */
+     --pink: #fcb69f;
+   
+}
+
+/* body {
+    font-family: var(--sm-font);
+    --pink: #fcb69f;
+} */
+
+
+/* button */
+.bg-primary {
+    background-color: var(--pink) !important;
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(218, 66, 29);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button):hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+.btn i {
+ color: white;
+}
+
+
+
+/* text color */
+.text-primary {
+    color: var(--pink) !important;
+}
+
+/* navbar */
+.navbar {
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffecd2; */
+    background-color: #0a0619;
+}
+
+
+/*   custom style to hide the navbar */
+
+
+   .navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.navbar-brand img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.navbar-brand span {
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+
+.blinking-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    animation: blink 1s infinite alternate;
+    
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.6;
+    }
+  }
+
+
+.nav-link:hover {
+    font: bold;
+    color: var(--pink) !important;
+    background-color: rgb(57, 214, 241);
+    border-radius: 10px;
+}
+
+.nav-item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+
+
+/* media queries */
+@media(min-width: 992px) {
+    .nav-item {
+        border-bottom: none;
+    }
+}
+  /* /// Till changes ///  */
+
+  .container1 {
+    background-color: black;
+    border-top: solid white;
+    border: solid white;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    width: 95%;
+    max-width: 1250px;
+    overflow: hidden;
+  }
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    /* border-radius: 15px; */
+    /* border: solid white; */
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align images at center along y-axis */
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    /* background-color: red; */
+  }
+
+  .carousel img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    margin: 10px;
+    border-radius: 15px;
+    /* border: solid white; */
+  }
+
+  .sImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align images at center along y-axis */
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+  }
+
+  .sImage img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    /* object-fit: contain;  */
+    margin: 10px;
+    border-radius: 15px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+
+  .detail-section {
+    flex: 1;
+    margin-bottom: 20px;
+    margin-inline: 10px;
+  }
+
+  .detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .logoImg {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .container1 h1 {
+    color: #fff;
+    margin: 5px 10px;
+    border-bottom: solid white;
+    text-align: center;
+  }
+
+  /* whatsapp-icon start */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+   
+}
+
+.whatsapp-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+/* whatsapp-icon end */
+
+
+  /* Media Queries */
+  @media screen and (min-width: 1028px) {
+    .carousel-container {
+      flex-direction: row;
+    }
+    .carousel {
+      flex-direction: column;
+      flex: 1;
+    }
+    .details {
+      padding: 20px 40px;
+      flex: 2;
+      margin-left: 20px;
+    }
+    .detail-row {
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .container1 {
+      width: 90%;
+    }
+    .carousel {
+      flex-direction: column;
+      flex: 1;
+    }
+    .details {
+      padding: 20px 40px;
+      flex: 2;
+      margin-left: 20px;
+    }
+    .detail-row {
+      flex-direction: row;
+    }
+    .logoImg {
+      width: 70px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .container1 {
+      width: 100%; /* Full width on smaller screens */
+    }
+    .carousel img {
+      margin: 10px; /* Adjusted margin for smaller screens */
+    }
+    .details {
+      margin-top: 20px;
+    }
+    .detail-section {
+      margin-right: 0; /* Reset margin for smaller screens */
+    }
+    .logoImg {
+      width: 70px;
+    }
+  }
+</style>
+</head>
+<body>
+
+
+    <!-- header  -->
+    <!-- navbar -->
+
+  <nav
+      class="navbar navbar-expand-lg navbar-light py-1 fixed-top"
+      id="scrollNavbar"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
+          href="index.html"
+        >
+          <img src="./images/logo4.jpeg" alt="site icon" />
+          <span class="text-uppercase fw-lighter ms-2"></span>
+        </a>
+
+        <!-- <div class="order-lg-2 nav-btns">
+          <button type="button" class="btn position-relative">
+            <i class="fa fa-search"></i>
+          </button>
+        </div> -->
+
+        <button
+          class="navbar-toggler border-0 bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+          <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item px-2 py-2">
+              <a
+                class="nav-link text-uppercase text-white"
+                href="index.html"
+                >home</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2">
+              <a class="nav-link text-uppercase text-white" href="#products"
+                >products</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2">
+              <a class="nav-link text-uppercase text-white" href="#clientle"
+                >clientle</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2 active">
+              <a
+                class="nav-link text-uppercase text-white"
+                href="team.html"
+                >about us</a
+              >
+            </li>
+            <li class="nav-item px-2 py-2 border-0">
+              <a class="nav-link text-uppercase text-white" href="contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="whatsapp-icon">
+      <a href="https://api.whatsapp.com/send?phone=918006408747" target="_blank">
+          <img src="./images/wp.png" alt="WhatsApp Icon">
+      </a>
+  </div>
+
+  <div class="container1">
+    <h1>Patient Monitor</h1>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel1">
+        <img src="./images/Akg-900.png" alt="Image 1">
+        <img src="./images/Akg-9009t.png" alt="Image 2">
+        <img src="./images/AKG-9009c.png" alt="Image 3">
+    </div>
+    <div id="collection" class="details">
+    <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Features</p>
+            <ul>
+              <li>5 standard parameters: ECG, RESP, NIBP, SPO2,1-TEMP</li>                    
+              <li>Realtime S-T segment analysis and ARR analysis.</li>
+              <li>Multi-display selectable including standard, large font, trend OxyCRG dynamic</li>
+              <li>Multi 7-lead ECG waveforms display in phase and capture dynamic waveforms.</li>
+              <li>Large volume of tabular and graphic trends information storage and easy to recall</li>
+              <li>Efficient resistance to interference of Defbrillator.</li>
+              <li>Up to 2 hours working capacity of built-in rechargeable battery.</li>
+              </ul>
+
+              <p class="product-description">NIBP</p>
+              <ul>
+                <li>Method: Digital Automatic oscillometric</li>
+                <li>Operation mode : Manual/ Automatic/ Continous</li>
+                <li>Over-pressure Protection : Double Safety Protection</li>
+                <li>Alarm: Systolic. Diastolic, Mean</li>
+                
+              </ul>
+        </div>
+      
+        <div class="detail-section">
+            <p class="product-description">SPO2</p>
+              <ul>
+                <li>Measurement range: 0-100%</li>
+                <li>Accuracy: +2% (70-100%); 0-69% unspecified</li>
+                <li>Alarm range: 0~100%</li>
+                <li>Pulse Rate range: 20~300bpm</li>
+              </ul>
+
+              <p class="product-description">ECG</p class="product-description">
+              <ul>
+                  <li>ECG: Lead mode: 5-lead (R, L, F, N, C)</li>
+                  <li>Waveform: 3 and 7 channel selectable</li>
+                  <li>Heart rate range: Adult: 15~300bpm</li>
+                  <li>Arrhythmia analysis & St.: YES</li>
+              </ul>
+
+              <p class="product-description">Temperature</p>
+              <ul>
+                  <li>Compatible probe: YSI or CYF</li>
+                  <li>Measurement range: 5~50°C</li>
+              </ul>
+
+              <p class="product-description">Respiration</p>
+              <ul>
+                  <li>Method: Thoracic impedance between (RA-LL)</li>
+                  <li>Measurement range:
+                      <ul>
+                      <li>Adult: 7~120rpm</li>
+                      <li>Neonate/Pediatric: 7~150rpm</li>
+                      </ul>
+                  </li>
+              </ul>
+        </div>
+    </div>
+  </div>
+    </div>
+</div>
+
+
+ <!-- Table top pulse oximeter with nibp  -->
+<div class="container1">
+  <h1>Table Top Pulse Oximeter with NIBP</h1>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel2">
+      <img src="./images/oximeter1.png" alt="Image 1">
+      <img src="images/oximeter2.png" alt="Image 2">
+      <img src="./images/oximeter3.png" alt="Image 3">
+    </div>
+    <div class="details">
+
+      <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Key Features</p>
+            <ul>
+              <li>Method: Oscillometry</li>               
+              <li>Operation Modes: Manual/Automatic</li>
+              <li>Auto Measure Time: 1~250 minutes adjustable, interval 5 minutes</li>
+              <li>Measurement Range: 10~270mmHg</li>
+              <li>Over Pressure Protection: Yes</li>
+              <li>Alarm: Systolic, Diastolic, Mean, PR, SPO2</li>
+              <li>High Bright LEDs Display of NIBP, SPO2, and Pulse Rate</li>
+              <li>High-Resolution Color LCD for Trend Tabular and SPO2 Waveforms Display</li>
+              <li>Manual/Auto/Continuous Measurement of NIBP</li>
+              <li>Adjustable Audible and Visual Alarms</li>
+              <li>Up to 2000 Groups NIBP Data Storage or SPO2 Data up to 10 hours</li>
+              <li>Suitable for Adult, Pediatric, and Neonatal Patients</li>
+            </ul>
+        </div>
+        <div class="detail-section">
+            <p class="product-description">Pulse Rate</p>
+            <ul>
+            <li>Range: 25~250bpm</li>                    
+            <li>Resolution: 1bpm</li>                    
+            <li>Accuracy: ±2bpm or ±2% (select larger)</li>
+            <li>Resolution: 1%</li>
+            <li>Net Weight: 1.6 kg</li>
+            <li>Dimensions: 240 mm x 190 mm x 162 mm</li>
+            </ul>
+
+            <p class="product-description">Display</p>
+            <ul>
+            <li>7 Segment LEDs for Systolic Pressure, Diastolic Pressure, SPO2, and Pulse Rate</li>
+            <li>2.4" Color LCD for Waveforms, Bargraphic, Trend, and System Menu</li>
+            <li>Weight: 1.15 kg | Dimensions: 232 mm x 198 mm x 75 mm</li>
+            </ul>
+
+            <p class="product-description">SPO2</p>
+            <ul>
+                <li>Measurement Range: 0~100%</li>
+                <li>Resolution: 1%</li>
+                <li>Accuracy: 70~100% ±2%, 0~69% unspecified</li>                    
+                <li>Alarm Range: 0~100%</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Syringe Pump  -->
+<div class="container1">
+  <h1>Syringe Pump</h1>
+  <div class="carousel-container">
+    <div class="sImage">
+      <img src="./images/syrine-punp.png" alt="Image 1">
+    </div>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Product features</p>
+            <ul class="details-list">
+                <li>3 Vein Infusion Modes:Easy SpeedSetting Mode, Time-Volume Mode, Dosage Weight Mode</li>
+                <li>The system automatically opens up KVO (Keep Vein Open) after injection, reopens vein circulation.</li>
+                <li>The machine automatically records the settings for the last injection.</li>
+                <li>Function to Auto-Define a Syringe:</li>
+                <li>Complete calibration technology for syringe brand definition that ensures the compatibility of any syringe brand and injection accuracy.</li>
+            </ul>
+        </div>
+        <div class="detail-section">
+            <p class="product-description">Specification</p>
+            <ul class="details-list">
+                <li>Syringe size: 2ml(For 1509E), 5ml, 10ml, 20ml, 30ml & 50/60ml</li>
+                <li>Volume Limiit: 0.1ml-999.9ml</li>
+                <li>Rate: 10ml=0.1ml to 300ml/h, 20ml-0.1ml to 600ml/h, 30ml-0.1ml to 900ml/h & 50ml-0.1ml to 1500ml/h</li>
+                <li>Battery Backup: 4 hrs.</li>
+                <li>Weight: 2.2 kg</li>
+                <li>Dimensions: 280mm x 210mm x 130mm</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bi phasic Defibrillator  -->
+<div class="container1">
+  <h1>Bi-Phasic Defibrillator</h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/Biphasic Defribrillator.png" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+              <p class="product-descriptoin">Specification</p>
+              <ul>
+                  <li>AKG-2008 Optional: SPO2, NIBP & Printer</li>
+                  <li>AKG-2009 Optional: AED, SPO2, NIBP, Pacemaker, 300J</li>
+                  <li>Masimo SPO2, 12 LED ECG + ETCO2</li>
+                  <li>Operating Mode: Manual</li>
+                  <li>Display: 7" Colour TFT</li>
+                  <li>Waveform: Biphasic Truncated Exponential</li>
+                  <li>Energy: 2 to 200 joules in 12 steps selection</li>
+                  <li>Energy Display: Displays selected and charged/delivered energy</li>
+                  <li>Synchronous Cardio Version: Energy delivery begins within 60 ms of the QRS Peak</li>
+                  <li>Charging Time: 6 seconds on Mains</li>
+                  <li>Paddle Assembly: External paddle assembly with coil retractable high voltage cable.</li>
+                  <li>Adults & Pediatric paddles integrated into the same handle</li>
+                  <li>Check Mode: Manual check mode</li>
+                  <li>Patient Impedance Range: 35 ohm to 250 ohm</li>
+                  <li>Shock Delivery: Through paddles or pads</li>
+                  <li>Battery: 12V 4.5Ah, Rechargeable (Sealed Lead Acid)</li>
+                  <li>Back-up Time: 3 hours min. 70-100 shocks of 150 Joules.</li>
+                  <li>Display Area: 150 mm x 90 mm</li>
+                  <li>Dimensions: H280 x W330 x D220 mm (Max) without Paddle</li>
+                  <li>Weight: Approx. 6 Kgs.</li>
+                  <li>Printer Size: 50 x 20</li>
+                  <li>360 Joules (Optional)</li>
+              
+                  </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- AED  -->
+<div class="container1">
+  <h1>AED <span>(Made in India)</span></h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/AED.png" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+              <p class="product-description">Technical Specifications (Model: RESmart GII-Auto CPAP)</p>
+              <ul>
+                  <li>Display: 3.4 Inch LCD</li>
+                  <li>Mode: CPAP, AUTO</li>
+                  <li>Mode of Operation: continuous</li>
+                  <li>AC Power Consumption: 100-240VAC, 50/60 Hz</li>
+                  <li>Pressure Range: 4-20 CM, H20</li>
+                  <li>Data Storage: SD CARD</li>
+                  <li>Sound Pressure Level: &lt;30 DB</li>
+                  <li>Maximum Flow: &gt;20 LPM</li>
+                  <li>Pressure Display Accuracy: ±0.5 HPA</li>
+                  <li>Dimensions: 170mm x 196mm x 118mm</li>
+                  <li>Weight: &lt;1.5kg</li>
+                  </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- ECG Machine  -->
+  <div class="container1">
+    <h1>ECG Machine</h1>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel3">
+        <img src="./images/Channel-12.png" alt="Image 1">
+        <img src="images/Channel-6.png" alt="Image 2">
+        <img src="./images/Channel-3.png" alt="Image 3">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+            <p class="product-description">Key Features</p>
+            <ul>
+                <li>Simultaneous acquisition of 12-lead ECG data, real-time recording</li>
+                <li>10.2 Inch LCD Color Display</li>
+                <li>Graphic display of 12-lead ECG waveform</li>
+                <li>Built-in analysis software of age which assures accurate analysis result</li>
+                <li>Auto-measurement, auto-interpretation, waveform playback, and storage of ECG data.</li>
+                <li>Patients Information Can be Input</li>
+                <li>Lead off & lack of paper detection function.</li>
+                <li>Data Transmitting to PC Via RS232/USB</li>
+                <li>USB Flash Disk & SD Memory, PC Review & Print</li>
+                <li>Heart rate measurement and pace-maker protection circuit</li>
+                <li>Multi-printing formats: manual/automatic, standard 12 channel, 3 channel phis 3 rhythm lead, 6 channel, 6 channel plus rhythm</li>
+                <li>AC, DC or built-in lithium battery power supply, alarm of battery weak and lead-off</li>
+                <li>Paper Size: 210mm x 20m</li>
+                <li>RS232 and USB interface cope with data-share or remote data management requirement (Optional)</li>
+                </ul>
+          </div>
+          <div class="detail-section">
+            <p class="product-description">Sigital 3 channel ECG Machine (Touch screen)</p>
+            <ul>
+                <li>Simultaneous acquisition of 12-lead ECG data</li>
+                <li>Screen Display: 5.7 Inch LCD screen, 12 leads display and working Status display 200 ECG Data Storage With Touch Screen Display</li>
+                <li>Measurement & Analysis: automatic measurement and analysis Recording Mode: 3CH, 3+1CH, 60 Sec Compressible waveform record Record Paper: 80mmX20/30m</li>
+                <li>JPG/PDF Report, PC Connectivity, Pen Drive Storage Cable break off or power deficiency.</li>
+                <li>Communication Interface: USB, professional input and output interface</li>
+                <li>Power Supply: AC 100-240V (50/60Hz), DC 12V/1500mAh</li>
+                <li>Data Storage: SD card for data storage (Optional)</li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Fetail monitor  -->
+<div class="container1">
+    <h1>Fetal Monitor</h1>
+    <div class="carousel-container">
+        <div class="sImage">
+          <img src="./images/Fetal Monitor.png" alt="Image 1">
+        </div>
+        <div class="details">
+          <div class="detail-row">
+            <div class="detail-section">
+                <p class="product-description">Technical Parameters</p>
+                <ul>
+                    <li>Probe: 9 wafer, wide wave Beam, Pulse working mode, high sensitivity</li>
+                    <li>Ultrasound Intensity: &lt;5mW/cm2</li>
+                    <li>Recorder: Thermal Printer</li>
+                    <li>Recorder Paper: Z-fold, thermal paper</li>
+                    <li>Printing Width: 112 mm</li>
+                    <li>Toco Range: 0-100 (relative unit)</li>
+                    <li>Display: FHR, TOCO, FM, Mark, Time, Freeze, Replay</li>
+                    <li>Power: AC 220V, 50Hz</li>
+                  </ul>
+    
+                  <p class="product-description">Specification</p>
+                  <ul>
+                      <li>Power Consumption: <20W</li>
+                      <li>Dimension : 320 mm (L) X 260 mm (W) X 80 mm (H)</li>
+                      <li>Net Weight: 3.2 KG</li>
+    
+                  </ul>
+            </div>
+            <div class="detail-section">
+                <p class="product-description">Main Features CMS-800G</p>
+                <ul>
+                    <li>8.4" color TFT LCD large Screen</li>
+                    <li>The world's advanced DSP technology Double event marks</li>
+                    <li>Three-in-one probe, reduce the line winding.</li>
+                    <li>Code-operation, easy and convenient</li>
+                    <li>12 Hours Data & Waveform Storage and review</li>
+                    <li>Twins monitoring Function Option.</li>
+                    <li>Built-in PC Network can be connected to the central monitoring system. (Optional)</li>
+                  </ul>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<!-- Bistors BT 250  -->
+<div class="container1">
+  <h1>Bistos-BT-350</h1>
+  <div class="carousel-container">
+      <div class="sImage">
+        <img src="./images/Bistos BT 350.png" alt="Image 1">
+      </div>
+      <div class="details">
+        <div class="detail-row">
+          <div class="detail-section">
+            <p class="product-description">Product features</p>
+            <ul>
+                <li>7" wide TFT color LCD display</li>
+                <li>Up to 150 patients data saving</li>
+                <li>Fetal heart sounds played and recorded on PC</li>
+                <li>Rotation screen</li>
+                <li>Waterproof Probe</li>
+                <li>GE / Philips Paper Compatible Interpretation Function</li>
+                <li>Multiple language support</li>
+                <li>Built-in quick guide (LCD Type) Waterproof probe</li>
+                <li>Twins Probe Available</li>
+              </ul>
+          </div>
+          <div class="detail-section">
+              <p class="product-description">Specification</p>
+              <ul>
+                  <li>Power Consumption: &lt;20 W</li>
+                  <li>Dimensions: 96 mm (H) X 326 mm (L) X 276 mm (D)</li>
+                  <li>Net Weight: 5.5 KG</li>
+                  <li>Working Temperature: 10-40°C, Relative Humidity 10-80%</li>
+                  <li>External Link: RS-232C</li>
+                  <li>Trend: USB Data Saving</li>
+                  <li>PC Interface (Central Monitoring System)</li>
+                  <li>Rechargeable Battery</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- Cpap  -->
+<div class="container1">
+  <h1>Auto-CPAP</h1>
+  <div class="carousel-container">
+    <div class="sImage">
+      <img src="./images/Auto CPAP.png" alt="Image 1">
+    </div>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Technical Specifications (Model: RESmart GII-Auto CPAP)</p>
+            <ul>
+                <li>Display: 3.4 Inch LCD</li>
+                <li>Mode: CPAP, AUTO</li>
+                <li>Mode of Operation: continuous</li>
+                <li>AC Power Consumption: 100-240VAC, 50/60 Hz</li>
+                <li>Pressure Range: 4-20 CM, H20</li>
+                <li>Data Storage: SD CARD</li>
+                <li>Sound Pressure Level: &lt;30 DB</li>
+                <li>Maximum Flow: &gt;20 LPM</li>
+                <li>Pressure Display Accuracy: ±0.5 HPA</li>
+                <li>Dimensions: 170mm x 196mm x 118mm</li>
+                <li>Weight: &lt;1.5kg</li>
+                </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bipap  -->
+<div class="container1">
+  <h1>BI-PAP</h1>
+  <div class="carousel-container">
+    <div class="sImage">
+      <img src="./images/Auto BPAP.png" alt="Image 1">
+    </div>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-section">
+            <ul>
+                <li>Display: 2.4 Inch LCD</li>
+                <li>Mode: CPAP, S</li>
+                <li>Mode of Operation: continuous</li>
+                <li>AC Power Consumption: 100-240VAC, 50/60 Hz</li>
+                <li>Pressure Range: 4-20 CM, H20</li>
+                <li>Data Storage: SD CARD</li>
+                <li>Sound Pressure Level: &lt;30 DB</li>
+                <li>Pressure Display Accuracy: ±0.5 HPA</li>
+                <li>Dimensions: 170mm x 196mm x 118mm, 290 x 196 x 134mm (with InH2 Tm heated humidifier)</li>
+                <li>Weight: &lt;1.5kg</li>
+                </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Oxygen Concentrator  -->
+<div class="container1">
+  <h1>Oxygen Concentrator</h1>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel4">
+      <img src="./images/j5.png" alt="Image 1">
+      <img src="./images/j5w.png" alt="Image 2">
+
+    </div>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-section">
+            <p class="product-description">Specification</p>
+            <ul>
+              <li>Flowrate: 0-SL/min</li>
+              <li>Purity: 93% +3%</li>
+              <li>Outlet Pressure (Mpa): 0.04-0.07</li>
+              <li>Sound Level (dB): &lt;50</li>
+              <li>Power: AC220V ±10%, 50/60 +1Hz;</li>
+              <li>Power: &lt;480W</li>
+              <li>Timer: accumulating timing; present timing</li>
+              <li>Alarm: Power failure, High & Low pressure, High temperature</li>
+              <li>Net Weight: 25kg</li>
+              <li>Size (mm): 365 x 375 x 600</li>
+            </ul>
+          
+        </div>
+        <div class="detail-section">
+            <p class="product-description">Feature</p>
+            <ul>
+              <li>SA (Pressure Swing Absorption) technology</li>
+              <li>Adjustable flowrate</li>
+              <li>Large LCD display for accumulating timing</li>
+              <li>Present timing: from 10min to 40 hrs.</li>
+              <li>Digital: Pressure, Temperature</li>
+              <li>Maintenance reminding</li>
+              <li>Nebulizer</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <!-- footer -->
+  <footer class="bg-dark py-4">
+    <div class="container-fluid">
+        <div class="row text-white g-4">
+            <div class="col-md-6 col-lg-3">
+                <a class="text-uppercase text-decoration-none brand text-white" href="index.html">AKG MEDICAL
+                    SYSYTEM</a>
+                <p class="text-white text-muted mt-3">Established in 2022, AKG Medical Systems is a leading provider
+                    of cutting-edge medical equipment and solutions, dedicated to revolutionizing the healthcare
+                    landscape. With a strong foundation of expertise and experience, our company has quickly emerged
+                    as a trusted name in the industry, driven by the visionary leadership of Mr. A.K. Aggarwal.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light">Links</h5>
+                <ul class="list-unstyled">
+                    <li class="my-3">
+                        <a href="index.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="#collection" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Products
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="team.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> About Us
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href="contact.html" class="text-white text-decoration-none text-muted">
+                            <i class="fas fa-chevron-right me-1"></i> Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light mb-3">Contact Us</h5>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </span>
+                    <span class="fw-light">
+                        Lucknow
+                    </span>
+                </div>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="fw-light">
+                        query@akgmedicalsystem.cloud
+                    </span>
+                </div>
+                <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                    <span class="me-3">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span class="fw-light">
+                        8006408747
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h5 class="fw-light mb-3">Follow Us</h5>
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                <i class="fab fa-linkedin"></i>
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/jquery-3.6.0.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- isotope js -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+  function initializeCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const images = carousel.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach(img => img.style.display = 'none');
+      images[index].style.display = 'block';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+    setInterval(nextImage, 3000); // Change image every 3 seconds
+  }
+
+  initializeCarousel('carousel1');
+  initializeCarousel('carousel2');
+  initializeCarousel('carousel3');
+  initializeCarousel('carousel4');
+
+  var $grid = $('.collection-list').isotope({
+    // options
+  });
+  // filter items on button click
+  $('.filter-button-group').on( 'click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    resetFilterBtns();
+    $(this).addClass('active-filter-btn');
+    $grid.isotope({ filter: filterValue });
+  });
+  
+  var filterBtns = $('.filter-button-group').find('button');
+  function resetFilterBtns(){
+    filterBtns.each(function(){
+      $(this).removeClass('active-filter-btn');
+    });
+  }
+</script>
+</body>
+</html>

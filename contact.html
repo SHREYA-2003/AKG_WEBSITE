@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-----------------------   FONT AWESOME   --------------------------->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <!-----------------------   BOOTSTRAP   ------------------------>
+        
+        
+        <link rel="stylesheet" href="./public/styles/contact.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <style>
+
+                @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+                
+                :root {
+                    --lg-font: 'Kaisei Tokumin', serif;
+                    --sm-font: 'Poppins', sans-serif;
+                    /* --pink: #e5345b; */
+                     --pink: #fcb69f;
+                   
+                }
+                
+                /* body {
+                    font-family: var(--sm-font);
+                    --pink: #fcb69f;
+                } */
+                
+                
+                /* button */
+                .bg-primary {
+                    background-color: var(--pink) !important;
+                }
+                
+                .btn:not(.nav-btns button) {
+                    background-color: #fff;
+                    color: rgb(218, 66, 29);
+                    padding: 10px 28px;
+                    border-radius: 25px;
+                    border: 1px solid rgb(85, 85, 85);
+                }
+                
+                .btn:not(.nav-btns button):hover {
+                    background-color: var(--pink);
+                    color: #fff;
+                    border-color: var(--pink);
+                }
+                
+                .btn i {
+                 color: white;
+                }
+                
+                
+                
+                /* text color */
+                .text-primary {
+                    color: var(--pink) !important;
+                }
+                
+                /* navbar */
+                .navbar {
+                    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+                    /* background-color: #ffecd2; */
+                    background-color: #0a0619;
+                }
+                
+                
+                /*   custom style to hide the navbar */
+                
+                
+                   .navbar.hidden {
+                    transform: translateY(-100%);
+                    transition: transform 0.3s ease-in-out;
+                  }
+                  
+                
+                .navbar-brand img {
+                    width: 100px;
+                    margin: 0;
+                    padding: 0;
+                    border-radius: 50%;
+                }
+                
+                .navbar-brand span {
+                    letter-spacing: 2px;
+                    font-family: var(--lg-font);
+                }
+                
+                
+                .nav-link:hover {
+                    font: bold;
+                    color: var(--pink) !important;
+                    background-color: rgb(57, 214, 241);
+                    border-radius: 10px;
+                }
+                
+                .nav-item {
+                    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 10px;
+                }
+                
+                
+                
+                /* media queries */
+                @media(min-width: 992px) {
+                    .nav-item {
+                        border-bottom: none;
+                    }
+                }
+                
+                </style>
+    </head>
+
+    <body>
+        <!-----------------------  NAVIGATION BAR    ------------------------>
+
+        <nav
+        class="navbar navbar-expand-lg navbar-light py-1 fixed-top"
+        id="scrollNavbar"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
+            href="index.html"
+          >
+            <img src="./images/logo4.jpeg" alt="site icon" />
+            <span class="text-uppercase fw-lighter ms-2"></span>
+          </a>
+  
+          <!-- <div class="order-lg-2 nav-btns">
+            <button type="button" class="btn position-relative">
+              <i class="fa fa-search"></i>
+            </button>
+          </div> -->
+  
+          <button
+            class="navbar-toggler border-0 bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+            <ul class="navbar-nav mx-auto text-center">
+              <li class="nav-item px-2 py-2">
+                <a
+                  class="nav-link text-uppercase text-white"
+                  href="index.html"
+                  >home</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2">
+                <a class="nav-link text-uppercase text-white" href="#products"
+                  >products</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2">
+                <a class="nav-link text-uppercase text-white" href="#clientle"
+                  >clientle</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2 active">
+                <a
+                  class="nav-link text-uppercase text-white"
+                  href="team.html"
+                  >about us</a
+                >
+              </li>
+              <li class="nav-item px-2 py-2 border-0">
+                <a class="nav-link text-uppercase text-white" href="contact.html"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="whatsapp-icon">
+        <a href="https://api.whatsapp.com/send?phone=918006408747" target="_blank">
+            <img src="./images/wp.png" alt="WhatsApp Icon">
+        </a>
+    </div>
+
+        <!---------------- END OF NAVIGATION BAR   ----------------------------->
+        <!---------------- FIRST CONTAINER   ----------------------------->
+        <section class="main-container">
+            <div class="first-container">
+
+                <div class="contact-info-container">
+                    <h3>CONTACT US</h3>
+                    <div class="contact-info-icon-details">
+                        <div class="contact-info-wrapper">
+                            <div class="contact-info">
+                                <i class="fa-solid fa-phone-volume"></i>
+
+                            </div>
+                        </div>
+                        <h4>PHONE</h4>
+                        <p>8006408747</p>
+                    </div>
+
+                    <div class="contact-info-icon-details">
+                        <div class="contact-info-wrapper">
+                            <div class="contact-info">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                        </div>
+                        <h4>EMAIL</h4>
+                        <p>query@akgmedicalsystem.cloud</p>
+                    </div>
+
+
+                    <div class="contact-info-icon-details">
+                        <div class="contact-info-wrapper">
+                            <div class="contact-info">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+
+                            </div>
+                        </div>
+                        <h4>ADDRESS</h4>
+                        <p>FF-02 Ramanand market, Sitapur road, Lucknow-226020.</p>
+                    </div>
+
+
+                </div>
+               
+
+                <div class="details">
+
+                    <div class="details-content">
+                        <h2>What can we offer</h2>
+                        <p>We can ensure reliability, low cost
+                            fares and most important, with safety
+                            and comfort in mind.</p>
+                        <p>At AKG Medical Systems, we are providing highest quality
+                            and most innovative medical equipment with our extensive
+                            range of products and exceptional customer service.</p>
+                        <h3>FOLLOW US ON</h3>
+                        <div class="social-icons">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-----------------------------  SECOND CONTAINER--------------------------------->
+            <div class="second-container-wrapper">
+                <div class="about-us">
+                    <div class="img-container">
+                        <img src="images/AKG LOGO Rounnd.png" alt="">
+                    </div>
+                    <div class="about-us-details">
+                    <div class="about-title">ABOUT US</div>
+                    <div class="about-para">AKG Surgical and Medical Equipments is a registered firm
+                        working in various fields. This is a group since last 22 years in Health Care Projects. </div>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <h2>ENQUIRY</h2>
+                    <div class="form-details">
+                        <form action="">
+                            <label for="FullName">Full Name</label>
+                            <input id="FullName" type="text" name="Full Name">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="Email">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="number" name="Phone">
+                            <label for="textarea">Message</label>
+                            <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                            <button>submit</button>
+
+                        </form>
+                    </div>
+                </div>
+          </div>
+        </section>
+        <!--------------------- FOOTER   ---------------------------->
+        <footer class="py-5">
+            <div class="container">
+                <div class="row text-white g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <a class="text-uppercase text-decoration-none brand text-white" href="index.html">AKG
+                            MEDICAL
+                            SYSYTEM</a>
+                        <p class="text-white text-muted mt-3">Established in 2022, AKG Medical Systems is a leading
+                            provider
+                            of cutting-edge medical equipment and solutions, dedicated to revolutionizing the
+                            healthcare
+                            landscape. With a strong foundation of expertise and experience, our company has quickly
+                            emerged
+                            as a trusted name in the industry, driven by the visionary leadership of Mr. A.K.
+                            Aggarwal.</p>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light">Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="my-3">
+                                <a href="index.html" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Home
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#collection" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Products
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="team.html" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> About Us
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="contact.html" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light mb-3">Contact Us</h5>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </span>
+                            <span class="fw-light">
+                                Lucknow
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="fw-light">
+                                query@akgmedicalsystem.cloud
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-phone-alt"></i>
+                            </span>
+                            <span class="fw-light">
+                                8006408747
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light mb-3">Follow Us</h5>
+                        <div>
+                            <ul class="list-unstyled d-flex">
+                                <li>
+                                    <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-linkedin"></i>
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    </body>
+
+</html>
