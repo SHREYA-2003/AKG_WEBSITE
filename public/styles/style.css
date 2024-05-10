@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    /* --pink: #e5345b; */
+     --pink: #fcb69f;
+   
+}
+
+body {
+    font-family: var(--sm-font);
+    --pink: #fcb69f;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* button */
+.bg-primary {
+    background-color: var(--pink) !important;
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(218, 66, 29);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button):hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+.btn i {
+ color: white;
+}
+
+
+
+/* text color */
+.text-primary {
+    color: var(--pink) !important;
+}
+
+/* navbar */
+.navbar {
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffecd2; */
+    background-color: #0a0619;
+}
+
+
+/*   custom style to hide the navbar */
+
+
+   .navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.navbar-brand img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.navbar-brand span {
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+
+.blinking-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    animation: blink 1s infinite alternate;
+    
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.6;
+    }
+  }
+
+
+.nav-link:hover {
+    font: bold;
+    color: var(--pink) !important;
+    background-color: rgb(57, 214, 241);
+    border-radius: 10px;
+}
+
+.nav-item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+
+
+
+
+/*start   header */
+
+#header {
+    margin-top: 120px;
+    width: 100%;
+    background-color: #fcb69f;
+}
+
+.carousel-inner .carousel-item img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+}
+
+/* Media Query for Tablets and Small Screens */
+@media (max-width: 768px) {
+    .carousel-inner h1 {
+        font-size: 36px; /* Adjust font size for smaller screens if needed */
+    }
+}
+
+
+/*  end header */
+
+
+
+/* whatsapp-icon start */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+   
+}
+
+.whatsapp-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+/* whatsapp-icon end */
+
+
+/* why to choose akgmedical cart  start*/
+.choose-us-cards {
+    font-family: Arial, sans-serif;
+    background-color: #fcb69f;
+    margin-top: 3rem;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.choose-us-heading {
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+
+.choose-us-cards {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.choose-us-card {
+    background-color: rgb(8, 7, 7);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    /* flex: 1; */
+    /* Distribute available space equally */
+    max-width: 280px;
+    /* max-width: 300px; */
+    max-height: 415px;
+}
+
+/* @media (max-width: 1024) {
+    .choose-us-card {
+        width: 500px;
+        height: 405px;
+    }
+} */
+
+
+.choose-us-cards h3 {
+    border-radius: 10px;
+    text-align: center;
+    
+    padding-top: 15px;
+}
+
+
+.serial-number {
+    background-color: #ffecd2;
+    color: #0a0619;
+    font-weight: bold;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.choose-us-card h3 {
+    background-color: #524047;
+   color: white;
+    font-size: 1.3rem;
+    height: 80px;
+}
+
+.choose-us-card p {
+    color: #ffffff;
+    margin-top: 5px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+
+/* why to choose akgmedical cart end */
+
+
+
+
+/* title */
+
+
+.title h2::before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 50px;
+    background-color: #0a0619;
+    left: -20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* collection */
+
+
+.filter-button-group {
+    text-align: center; /* Center align buttons */
+    margin-bottom: 1rem; /* Add some space at the bottom */
+}
+
+.collection-list .collection-img img {
+    max-width: 100%; /* Make product images responsive */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Query for Tablets and Small Screens */
+@media (max-width: 768px) {
+    .filter-button-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center align buttons */
+    }
+
+    .filter-button-group .btn {
+        flex: 0 0 48%; /* Adjust button width for smaller screens */
+        margin: 0.25rem; /* Add some margin between buttons */
+    }
+
+    .collection-list .collection-img img {
+        max-width: 100%; /* Make product images responsive */
+        height: auto;
+    }
+}
+
+
+
+/* special */
+.special-list p {
+    font-weight: bold;
+    
+}
+.special-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.special-img span {
+    top: 20px;
+    right: 20px;
+
+}
+
+.special-list .btn {
+    padding: 8px 20px !important;
+}
+
+.special-img img {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 250px;
+    height: 200px;
+
+
+
+    pointer-events: none;
+    
+    -moz-user-drag: none;
+    -webkit-user-drag: none;
+}
+
+.special-img:hover img {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.carousel-1 {
+    max-height: 100%;
+}
+
+
+#aboutUs {
+    padding: 30px;
+}
+
+#aboutUs div p {
+    text-align: center;
+    margin: 0 auto; /* Center align the text horizontally */
+    color: black;
+    width: 100%; /* Make the width 100% for responsiveness */
+    max-width: 800px; /* Set a maximum width for readability on larger screens */
+}
+
+.bg-image {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  @media (max-width: 1024px) {
+    .bg-image {
+      background-attachment: scroll;
+    }
+  }
+
+    /* Media Query for Tablets and Small Screens */
+@media (max-width: 768px) {
+    #aboutUs div p {
+        font-size: 16px; /* Adjust font size for smaller screens if needed */
+    }
+}
+
+
+
+                                            /* proud styles */
+
+
+                                            
+.proud {
+    padding-top: 30px;
+    text-align: center;
+    background-color: #ffecd2;
+    height: 20rem;
+    width: 100%;
+}
+
+.ftup {
+    margin-top: 2rem;
+    height: 130px;
+    width: 260px;
+    padding: 10px;
+}
+
+.proud div h3 {
+    color: #3f3f3f;
+}
+
+.line-with-arrow {
+    position: relative;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.line-with-arrow::before {
+   
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #9d9d9d; /* Line color and thickness */
+}
+
+.line-with-arrow::after {
+  
+    content: "";
+    position: absolute;
+    top: calc(100% - 4px); /* Adjust the positioning to align the base of the arrow */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg); /* Rotate arrow */
+    width: 10px; /* Arrow width */
+    height: 10px; /* Arrow height */
+    background-color: #9d9d9d; /* Arrow color */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Arrow shape with apex upwards */
+}
+
+/* Media Query for Tablets and Small Screens */
+@media (max-width: 768px) {
+    .proud {
+        height: auto;
+        padding: 30px 0; /* Adjust spacing for smaller screens */
+    }
+
+    .ftup {
+        width: 80%; /* Adjust image width for smaller screens */
+    }
+
+    .line-with-arrow {
+        width: 100%; /* Adjust the width of the line for smaller screens */
+    }
+}
+
+
+/* footer */
+footer .brand {
+    font-family: var(--lg-font);
+    letter-spacing: 2px;
+}
+
+footer a {
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--pink) !important;
+}
+
+footer p {
+    font-size: 12px;
+    color: white;
+}
+
+footer{
+    background-color: #0a0619;
+}
+
+section{
+    background-color: #fcb69f;
+
+}
+
+/* media queries */
+@media(min-width: 992px) {
+    .nav-item {
+        border-bottom: none;
+    }
+}
+
+
+
+
+ /* Add a media query for screens up to 768px */
+ @media (max-width: 768px) {
+    .choose-us-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 20px; /* Increase gap between cards */
+    }
+
+    .choose-us-card {
+        width: 100%; /* Cards take full width */
+        height: auto; /* Let content determine height */
+    }
+
+    /* Adjust font size for smaller screens */
+    .choose-us-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* You can adjust other styles as needed for smaller screens */
+}
+/* CSS for Clients Section */
+.ourClients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Center-align items vertically */
+    gap: 20px; /* Gap between images */
+    margin: 40px; /* Add margin for better spacing */
+  }
+
+  .ourClients img {
+    max-width: 200px; /* Ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  #clients{
+    padding: 30px;
+  }
